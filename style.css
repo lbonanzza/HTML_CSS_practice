@@ -50,6 +50,18 @@ p {
     z-index: 1000;
 }
 
+.header.fixed {
+    height: auto;
+    position: fixed;
+
+    background-color: #313454;
+}
+
+.header.fixed .header__inner {
+    padding: 15px 0;
+    border-bottom: 0;
+}
+
 .header__inner {
     display: flex;
     justify-content: space-between;
@@ -556,6 +568,8 @@ p {
 .burger__item:after {
     bottom: -8px;
 }
+
+
 
 /* ====================
  Media
