@@ -5,6 +5,8 @@ $(function () {
   let intro = $("#intro");
   let introH = intro.innerHeight();
   let scrollPosition = $(window).scrollTop();
+  let nav = $("#nav");
+  let navToggle = $("#navToggle");
 
   checkScroll(scrollPosition, introH);
 
@@ -34,12 +36,33 @@ $(function () {
     let elementId = $(this).data('scroll');
     let elementOffset = $(elementId).offset().top;
 
-    console.log(elementOffset);
+    nav.removeClass("show");
 
     $("html, body").animate({
       scrollTop: elementOffset - 70
     }, 1000);
-  })
+  });
+
+
+  // Navigation  Toggle
+
+   navToggle.on("click", function (event) {
+    event.preventDefault();
+
+    nav.toggleClass("show");
+  });
+
+  // Reviews Slider https://kenwheeler.github.io/slick/
+  let slider = $("#reviewsSlider");
+
+  slider.slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    arrows: false,
+    dots: true,
+  });
 
 
 
